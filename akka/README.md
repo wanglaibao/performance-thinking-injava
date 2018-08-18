@@ -24,4 +24,9 @@
 
 [Goodbye Activator,And MeetLightbend'sNewToolingTeam]   (https://www.lightbend.com/blog/activator)
 
+[akka-rpc（基于akka的rpc实现）]    (https://my.oschina.net/FengJ/blog/268387)
+
+[petabridge/akka-monitoring]    (https://github.com/petabridge/akka-monitoring)
+
+[Improving Akka dispatchers]    (https://blog.scalac.io/improving-akka-dispatcher.html)
 
