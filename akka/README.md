@@ -18,4 +18,10 @@
 * Akka Cluster、CAP理论
 * Akka 邮箱问题的处理
 
+## 2： Typesafe Activator工具的说明
+
+[Typesafe Activator] (https://www.lightbend.com/blog/typesafe-activator-what-is-it)
+
+[Goodbye Activator,And MeetLightbend'sNewToolingTeam]   (https://www.lightbend.com/blog/activator)
+
 
