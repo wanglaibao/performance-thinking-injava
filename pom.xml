@@ -9,6 +9,7 @@
         <module>learningakka</module>
         <module>reactivedesign</module>
         <module>springakka</module>
+        <module>springbootakka</module>
     </modules>
     <packaging>pom</packaging>
 

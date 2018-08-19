@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
  * @date 2018-08-19
  * @version 1.0
  */
+@Component
 @Scope(ConfigurableBeanFactory.SCOPE_SINGLETON)
 public class GreetingActor extends AbstractActor {
 
