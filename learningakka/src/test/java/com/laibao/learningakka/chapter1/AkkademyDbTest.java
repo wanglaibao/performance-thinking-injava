@@ -26,6 +26,8 @@ public class AkkademyDbTest {
         AkkademyDb akkademyDb = actorRef.underlyingActor();
         System.out.println(JSON.toJSONString(akkademyDb));
         assertEquals(akkademyDb.getMap().get("name"), "金戈大大");
+
+        System.out.println(akkademyDb.getMap().get("name"));
     }
 
 
