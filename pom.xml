@@ -8,6 +8,7 @@
         <module>akka</module>
         <module>learningakka</module>
         <module>reactivedesign</module>
+        <module>springakka</module>
     </modules>
     <packaging>pom</packaging>
 
