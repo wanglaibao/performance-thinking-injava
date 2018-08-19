@@ -30,3 +30,11 @@
 
 [Improving Akka dispatchers]    (https://blog.scalac.io/improving-akka-dispatcher.html)
 
+
+## akka 官方文档
+
+[Akka Documentation]    (https://doc.akka.io/docs/akka/2.5.14/)
+
+[Getting Started Guide] (https://doc.akka.io/docs/akka/current/guide/index.html)
+
+[Reactive Design Patterns]  (https://github.com/ReactiveDesignPatterns/)
