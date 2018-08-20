@@ -2,8 +2,9 @@
 
 ##  What is Akka
 
-* Akka is an event-driven middleware framework, 
-    for building scalable and reliable distributed applications for JVM.
+* Akka is a toolkit and runtime for building highly concurrent, distributed, and fault-tolerant event-driven applications on the JVM. 
+
+* Actors are the unit of execution in Akka. The Actor model is an abstraction that makes it easier to write correct concurrent, parallel and distributed systems.  
     
     
 ## Akka Philosophy
@@ -19,3 +20,9 @@
 * Scale out (Remoting)
 
 * Fault tolerance
+
+## What is an Actor
+
+* Unit of code organization
+* Unit of computation
+* Keeps policy decisions separate 
