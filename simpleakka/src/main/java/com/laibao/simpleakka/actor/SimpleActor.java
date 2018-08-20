@@ -1,6 +1,8 @@
 package com.laibao.simpleakka.actor;
 
 import akka.actor.AbstractLoggingActor;
+import akka.event.Logging;
+import akka.event.LoggingAdapter;
 import com.alibaba.fastjson.JSON;
 import com.laibao.simpleakka.command.Command;
 import com.laibao.simpleakka.event.Event;
@@ -15,6 +17,7 @@ import java.util.UUID;
  * @version 1.0
  */
 public class SimpleActor extends AbstractLoggingActor {
+    private final LoggingAdapter logger = Logging.getLogger(context().system(), this);
 
     // 继承了 AbstractLoggingActor 后下面的代码就可以不用了
     //LoggingAdapter log = Logging.getLogger(getContext().system(), this);
@@ -34,6 +37,7 @@ public class SimpleActor extends AbstractLoggingActor {
                                     System.out.println(JSON.toJSONString(event));
                      })
                     .matchEquals("echo",str -> log().info(str.toUpperCase()))
+                    .matchAny(o -> logger.info("received unknown message: {}", o))
                     .build();
     }
 
