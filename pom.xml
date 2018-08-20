@@ -11,6 +11,7 @@
         <module>springakka</module>
         <module>springbootakka</module>
         <module>simpleakka</module>
+        <module>springintegration</module>
     </modules>
     <packaging>pom</packaging>
 

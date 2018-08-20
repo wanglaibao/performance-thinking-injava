@@ -59,3 +59,8 @@ https://github.com/ihr/akka-di/blob/master/src/main/java/org/honeysoft/akka/Boot
 [mastering-akka]    (https://github.com/cmbaxter/mastering-akka)
 
 [akka-http-streaming-response-examples] (https://github.com/calvinlfer/akka-http-streaming-response-examples)
+
+
+
+## 微服务有关的资源链接
+[microservice_workshop]     (https://github.com/meta-magic/microservice_workshop)
