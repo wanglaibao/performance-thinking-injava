@@ -10,6 +10,7 @@
         <module>reactivedesign</module>
         <module>springakka</module>
         <module>springbootakka</module>
+        <module>simpleakka</module>
     </modules>
     <packaging>pom</packaging>
 
