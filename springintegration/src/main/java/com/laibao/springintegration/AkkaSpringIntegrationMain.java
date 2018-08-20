@@ -1,6 +1,8 @@
 package com.laibao.springintegration;
 
-import com.laibao.springakka.confiruration.AppConfiguration;
+import akka.actor.ActorRef;
+import com.alibaba.fastjson.JSON;
+import com.laibao.springintegration.config.AppConfiguration;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
@@ -16,7 +18,11 @@ public class AkkaSpringIntegrationMain {
         //applicationContext.scan();
         applicationContext.refresh();
 
-        Thread.sleep(5000);
+        System.out.println("AAAAAAAAAAA");
+
+        ActorRef actorRef = (ActorRef) applicationContext.getBean("workerActorRef");
+        System.out.println(JSON.toJSONString(actorRef));
+
         applicationContext.registerShutdownHook();
     }
 }
