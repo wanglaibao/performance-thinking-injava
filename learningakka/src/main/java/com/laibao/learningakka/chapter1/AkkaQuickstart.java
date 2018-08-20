@@ -39,7 +39,7 @@ public class AkkaQuickstart {
       System.in.read();
     } catch (IOException ioe) {
     } finally {
-        actorSystem.terminate();
+      actorSystem.terminate();
     }
   }
 }

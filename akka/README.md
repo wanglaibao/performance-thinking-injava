@@ -1,5 +1,7 @@
 #  LEARNING AKKA STEP BY STEP
 
+#  Toolkit and runtime for building concurrent, distributed, and fault tolerant event-driven applications.
+
 ## 0: 使用Akka构建高性能,高并发,高可用,高容错的可扩展的大规模分布式应用程序
 * High Performance
 * High Concurrency
@@ -47,3 +49,5 @@
 
 
 https://github.com/ihr/akka-di/blob/master/src/main/java/org/honeysoft/akka/Bootstrap.java
+
+[akka-java8-examples]   (https://github.com/opencredo/akka-java8-examples)
