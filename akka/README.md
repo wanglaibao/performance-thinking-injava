@@ -53,3 +53,9 @@
 https://github.com/ihr/akka-di/blob/master/src/main/java/org/honeysoft/akka/Bootstrap.java
 
 [akka-java8-examples]   (https://github.com/opencredo/akka-java8-examples)
+
+[spring-akka-sample]    (https://github.com/jsuereth/spring-akka-sample)
+
+[mastering-akka]    (https://github.com/cmbaxter/mastering-akka)
+
+[akka-http-streaming-response-examples] (https://github.com/calvinlfer/akka-http-streaming-response-examples)
