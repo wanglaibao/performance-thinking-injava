@@ -18,20 +18,19 @@ import static akka.actor.ActorRef.noSender;
 public class SimpleMainApp {
     public static final Logger logger = LoggerFactory.getLogger(SimpleMainApp.class);
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         //创建容器
         final ActorSystem actorSystem = ActorSystem.create("simple-actor-system");
-
+        logger.info("Actor System Starting...  Actor System Starting...  Actor System Starting...  Actor System Starting...");
         final ActorRef actorRef = actorSystem.actorOf(Props.create(SimpleActor.class), "simple-actor");
+        actorRef.tell(new Command("jinge 1"), noSender());
+        actorRef.tell(new Command("jinge 2"), noSender());
+        actorRef.tell(new Command("jinge 3"), noSender());
+        actorRef.tell(new Command("jinge 4"), noSender());
+        actorRef.tell(new Command("jinge 5"), noSender());
 
-        actorRef.tell(new Command("CMD 1"), noSender());
-        actorRef.tell(new Command("CMD 2"), noSender());
-        actorRef.tell(new Command("CMD 3"), noSender());
-        actorRef.tell(new Command("CMD 4"), noSender());
-        actorRef.tell(new Command("CMD 5"), noSender());
-
-
-        logger.debug("Actor System Shutdown Starting...");
+        Thread.sleep(3000);
+        logger.info("Actor System Shutdown Starting... Actor System Shutdown Starting... Actor System Shutdown Starting...");
         actorSystem.terminate();
 
     }

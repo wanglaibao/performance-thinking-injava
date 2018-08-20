@@ -1,6 +1,7 @@
 package com.laibao.simpleakka.actor;
 
 import akka.actor.AbstractLoggingActor;
+import com.alibaba.fastjson.JSON;
 import com.laibao.simpleakka.command.Command;
 import com.laibao.simpleakka.event.Event;
 
@@ -29,6 +30,8 @@ public class SimpleActor extends AbstractLoggingActor {
                      .match(Command.class,command -> {
                                     String data = command.getData();
                                     Event event = new Event(data, UUID.randomUUID().toString());
+                                    System.out.println("data  : " + data);
+                                    System.out.println(JSON.toJSONString(event));
                      })
                     .matchEquals("echo",str -> log().info(str.toUpperCase()))
                     .build();
