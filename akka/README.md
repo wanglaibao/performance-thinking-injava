@@ -37,4 +37,13 @@
 
 [Getting Started Guide] (https://doc.akka.io/docs/akka/current/guide/index.html)
 
-)
+[Spring Boot Akka Event Sourcing Starter – Part 4 – Final]  (https://mromeh.com/category/akka/)
+
+[akka-patterns] (https://github.com/eigengo/akka-patterns/wiki/Spring)
+
+[Autowiring Akka Actors with Spring]    (http://caffeinatedideas.com/2013/02/18/autowiring-akka-actors-with-spring.html)
+
+[AKKA Actor Dependency Injection Using Spring]  (https://ingini.org/2012/08/05/akka-actor-dependency-injection-using-spring/)
+
+
+https://github.com/ihr/akka-di/blob/master/src/main/java/org/honeysoft/akka/Bootstrap.java
