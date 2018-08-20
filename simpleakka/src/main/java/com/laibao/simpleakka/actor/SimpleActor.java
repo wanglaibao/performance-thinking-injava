@@ -1,0 +1,38 @@
+package com.laibao.simpleakka.actor;
+
+import akka.actor.AbstractLoggingActor;
+import com.laibao.simpleakka.command.Command;
+import com.laibao.simpleakka.event.Event;
+
+import java.util.UUID;
+
+/**
+ * SimpleActor receives an instance of Command and emits an Event.
+ *
+ * @author laibao wang
+ * @date 2018-08-20
+ * @version 1.0
+ */
+public class SimpleActor extends AbstractLoggingActor {
+
+    // 继承了 AbstractLoggingActor 后下面的代码就可以不用了
+    //LoggingAdapter log = Logging.getLogger(getContext().system(), this);
+
+    private SimpleActor() {
+        log().info("SimpleActor constructor");
+    }
+
+    @Override
+    public Receive createReceive() {
+        log().info("Received Command: ");
+        return receiveBuilder()
+                     .match(Command.class,command -> {
+                                    String data = command.getData();
+                                    Event event = new Event(data, UUID.randomUUID().toString());
+                     })
+                    .matchEquals("echo",str -> log().info(str.toUpperCase()))
+                    .build();
+    }
+
+
+}
