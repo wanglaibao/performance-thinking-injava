@@ -10,7 +10,7 @@ import akka.actor.ExtendedActorSystem;
  */
 public class AkkaSpringExtension extends AbstractExtensionId<SpringExt> {
 
-    public static AkkaSpringExtension SpringExtProvider = new AkkaSpringExtension();
+    public static AkkaSpringExtension springExtProvider = new AkkaSpringExtension();
 
     @Override
     public SpringExt createExtension(ExtendedActorSystem extendedActorSystem) {

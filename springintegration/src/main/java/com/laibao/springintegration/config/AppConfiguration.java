@@ -2,13 +2,14 @@ package com.laibao.springintegration.config;
 
 import akka.actor.ActorRef;
 import akka.actor.ActorSystem;
+import com.laibao.springintegration.springextension.SpringExt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import static com.laibao.springintegration.springextension.AkkaSpringExtension.SpringExtProvider;
+import static com.laibao.springintegration.springextension.AkkaSpringExtension.springExtProvider;
 
 /**
  * @author laibao wang
@@ -25,17 +26,23 @@ public class AppConfiguration {
     @Bean
     public ActorSystem actorSystem() {
         ActorSystem actorSystem = ActorSystem.create("akka-spring-integration");
-        SpringExtProvider.get(actorSystem).initialize(applicationContext);
+        //springExtProvider.get(actorSystem).initialize(applicationContext);   这样写是OK的
+        SpringExt ext = springExtProvider.get(actorSystem);
+        ext.initialize(applicationContext);
         return actorSystem;
     }
 
     @Bean
     public ActorRef databaseActorRef() {
-        return actorSystem().actorOf(SpringExtProvider.get(actorSystem()).props("databaseActor"), "database");
+        // return actorSystem().actorOf(springExtProvider.get(actorSystem()).props("databaseActor"), "database");  这样写是OK的
+        SpringExt ext = springExtProvider.get(actorSystem());
+        return actorSystem().actorOf(ext.props("databaseActor"),"database");
     }
 
     @Bean
     public ActorRef workerActorRef() {
-        return actorSystem().actorOf(SpringExtProvider.get(actorSystem()).props("workerActor"), "worker");
+        // return actorSystem().actorOf(springExtProvider.get(actorSystem()).props("workerActor"), "worker");   这样写是OK的
+        SpringExt ext = springExtProvider.get(actorSystem());
+        return actorSystem().actorOf(ext.props("workerActor"),"worker");
     }
 }
