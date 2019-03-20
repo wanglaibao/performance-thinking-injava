@@ -1,7 +1,9 @@
 package com.laibao.concurrency;
 
-
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,7 +15,7 @@ import java.util.concurrent.Semaphore;
  * 则每次只产生一个线程，不会发生线程安全问题
  */
 @Slf4j
-public class CountExample {
+public class MapExample {
 
     // 请求总数
     public static int clientTotal = 5000;
@@ -21,17 +23,18 @@ public class CountExample {
     // 同时并发执行的线程数
     public static int threadTotal = 1;
 
-    public static int count = 0;
+    private static Map<Integer, Integer> map = new HashMap<>();
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
         final Semaphore semaphore = new Semaphore(threadTotal);
         final CountDownLatch countDownLatch = new CountDownLatch(clientTotal);
         for (int i = 0; i < clientTotal; i++) {
+            final int count = i;
             executorService.execute(() -> {
                 try {
                     semaphore.acquire();
-                    add();
+                    func(count);
                     semaphore.release();
                 } catch (Exception ex) {
                     log.error("exception", ex.getMessage());
@@ -41,10 +44,10 @@ public class CountExample {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}", count);
+        log.info("size:{}", map.size());
     }
 
-    private static void add() {
-        count++;
+    private static void func(int threadNum) {
+        map.put(threadNum, threadNum);
     }
 }
