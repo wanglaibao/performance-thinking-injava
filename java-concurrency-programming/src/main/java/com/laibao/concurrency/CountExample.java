@@ -2,6 +2,8 @@ package com.laibao.concurrency;
 
 
 import lombok.extern.slf4j.Slf4j;
+import net.jcip.annotations.NotThreadSafe;
+
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -13,13 +15,14 @@ import java.util.concurrent.Semaphore;
  * 则每次只产生一个线程，不会发生线程安全问题
  */
 @Slf4j
+@NotThreadSafe
 public class CountExample {
 
     // 请求总数
     public static int clientTotal = 5000;
 
     // 同时并发执行的线程数
-    public static int threadTotal = 1;
+    public static int threadTotal = 200;
 
     public static int count = 0;
 
