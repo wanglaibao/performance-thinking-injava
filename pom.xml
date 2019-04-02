@@ -13,6 +13,7 @@
         <module>simpleakka</module>
         <module>springintegration</module>
         <module>java-concurrency-programming</module>
+        <module>java-concurrency-basic</module>
     </modules>
     <packaging>pom</packaging>
 
