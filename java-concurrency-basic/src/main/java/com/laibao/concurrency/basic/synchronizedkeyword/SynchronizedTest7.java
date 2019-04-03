@@ -29,8 +29,8 @@ public class SynchronizedTest7 {
             }).start();
         }
     }
-}
 
+}
 
 class SynchronizedTest8 extends SynchronizedTest7 {
 
@@ -43,3 +43,5 @@ class SynchronizedTest8 extends SynchronizedTest7 {
     }
 
 }
+
+
