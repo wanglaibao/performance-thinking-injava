@@ -1,13 +1,14 @@
-package com.laibao.concurrency;
+package com.laibao.concurrency.count;
 
 
+import com.laibao.concurrency.annoations.NotThreadSafe;
 import lombok.extern.slf4j.Slf4j;
-import net.jcip.annotations.NotThreadSafe;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 对于下面的例子，我们可以看到，每次输出的结果都是小于5000，并且值不是固定的，
@@ -16,7 +17,7 @@ import java.util.concurrent.Semaphore;
  */
 @Slf4j
 @NotThreadSafe
-public class CountExample {
+public class CountExample1 {
 
     // 请求总数
     public static int clientTotal = 5000;
@@ -24,7 +25,8 @@ public class CountExample {
     // 同时并发执行的线程数
     public static int threadTotal = 200;
 
-    public static int count = 0;
+
+    private static AtomicInteger atomicInteger = new AtomicInteger(0);
 
     public static void main(String[] args) throws Exception {
         ExecutorService executorService = Executors.newCachedThreadPool();
@@ -44,10 +46,10 @@ public class CountExample {
         }
         countDownLatch.await();
         executorService.shutdown();
-        log.info("count:{}", count);
+        log.info("count:{}", atomicInteger.get());
     }
 
     private static void add() {
-        count++;
+        atomicInteger.getAndIncrement();
     }
 }
